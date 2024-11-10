@@ -13,8 +13,8 @@
       let reader = new FileReader();
       reader.onload = function (e) {
         // 読み込み完了時の処理
-        // 改行コードは環境に依るかも
-        let rows = e.target.result.split(/\r\n/);
+        // 改行コードは環境に依るかも → Windows 以外で実行するようにする ( WSL とか )
+        let rows = e.target.result.split(/\n/);
         var outputCSV = [];
         var firstLine = false;
         var count = 0;
